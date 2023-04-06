@@ -2,6 +2,7 @@ import React from 'react'
 import Content from '../components/Content'
 import Sidebar from '../components/Sidebar'
 import Navbar from '../components/Navbar'
+import { Outlet } from 'react-router-dom'
 
 const Home = () => {
   return (
@@ -10,7 +11,7 @@ const Home = () => {
             <Sidebar />
             <div id="page-content-wrapper">
                 <Navbar />
-                <Content />
+                <Outlet />
             </div>
         </div>
     </div>

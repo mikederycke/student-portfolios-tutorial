@@ -1,6 +1,8 @@
 
 Source for sidebar styling: https://startbootstrap.com/template/simple-sidebar
 
+Source for portfolio styling: https://startbootstrap.com/theme/resume
+
 
 
 # Getting Started with Create React App
