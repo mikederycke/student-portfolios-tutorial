@@ -16,15 +16,21 @@ export async function getStudents() {
 }
 
 export async function getStudent(id) {
-    let resp = await fetch('https://jsonplaceholder.typicode.com/users/' + id)
-    return await resp.json()
-      
+    let students = await getStudents();
+    let student = students.find(student => student.id == id)
+    return student
 }
 
-export async function createStudent() {
+export async function createStudent({email, fullname} = {}) {
+    
     let student = {
+        id: Math.floor(Math.random() * 1000),
         name: 'John Doe',
         email: 'john@email.com'	
+    }
+    if(email){
+        student.email = email
+        student.name = fullname
     }
 
     let students = localStorage.getItem('students')

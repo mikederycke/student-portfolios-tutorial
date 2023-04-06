@@ -9,6 +9,7 @@ import About from './routes/About';
 import Content, {loader as studentLoader} from './components/Content';
 import ErrorPage from './routes/ErrorPage';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import StudentForm, {action as formAction} from './routes/StudentForm';
 
 const router = createBrowserRouter([
   { 
@@ -22,6 +23,10 @@ const router = createBrowserRouter([
         path: '/student/:id',
         element: <Content />,
         loader: studentLoader
+      },{
+        path: '/newStudent',
+        element: <StudentForm />,
+        action: formAction,
       }
     ]
   },{
