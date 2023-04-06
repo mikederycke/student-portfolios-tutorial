@@ -2,7 +2,8 @@ import React, { Children } from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import Home from './routes/Home';
-import Sidebar, {loader as sidebarLoader} from './components/Sidebar';
+import {loader as sidebarLoader,
+        action as sidebarAction} from './components/Sidebar';
 import About from './routes/About';
 
 import Content, {loader as studentLoader} from './components/Content';
@@ -15,6 +16,7 @@ const router = createBrowserRouter([
     element: <Home />,
     errorElement: <ErrorPage />,
     loader: sidebarLoader, 
+    action: sidebarAction,
     children: [
       {
         path: '/student/:id',
